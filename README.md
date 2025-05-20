@@ -105,6 +105,7 @@ echo "Задание 6. Изменения в ветке feature/api" >> /home/s
 git add .
 git commit -m "Задание 6. Изменения в ветке feature/api"
 echo "Задание 6. Изменения 2 в ветке feature/api" >> /home/sasha/HW2_Lesta/2/2.txt
+<<<<<<< HEAD
 git add .
 git commit -m "Задание 6. Изменения 2 в ветке feature/api"
 ```
