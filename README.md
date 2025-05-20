@@ -128,3 +128,19 @@ git checkout master
 git merge --no-ff feature/api -m "Слияние ветки feature/api в master"
 git log --graph --oneline
 ```
+➜  HW2_Lesta git:(master) git log --oneline --graph --all
+
+```
+*   ae5644e (HEAD -> master) Слияние ветки feature/api в master
+|\  
+| * 48487a5 (feature/api) Задание 6. Изменения 2 в ветке feature/api
+| * c307581 Задание 6. Изменения в ветке feature/api
+* | a57e332 Задание 6
+* | b3bd339 Удалил ненужные картинки
+|/  
+| * ec0fedc (feature/ui) Задание 6. Изменения 2 в ветке feature/ui
+| * 8969f8a Задание 6. Изменения 1 в ветке feature/ui
+|/  
+* 9c39df1 Задания 1-4
+(END)
+```
