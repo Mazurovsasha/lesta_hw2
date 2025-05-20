@@ -1,4 +1,4 @@
-# Домашняя работа к лекции №2 
+# Домашняя работа к лекции №2 Мазуров А.
 
 ## 1. Создайте локальный Git-репозиторий.
 
@@ -155,4 +155,147 @@ git rebase master
 
 ```
 Successfully rebased and updated refs/heads/feature/ui.
+```
+
+## 9. Создайте тег v1.0.0 на коммите, в котором объединены все изменения. Подпишите тег с сообщением.
+
+```bash
+git checkout master
+git tag -a v1.0.0 -m "Релиз версии v1.0.0"
+git tag # Проверяем, что создался
+```
+
+## 10. Иммитируйте ошибочный коммит в любой из веток. Отмените его с помощью git revert, а затем — другим способом с использованием git reset.
+
+```bash
+echo "ошибка" > zadanie10.txt
+git add .
+git commit -m  "Ошибочный коммит"
+```
+### Revert:
+
+```bash
+git revert HEAD
+```
+
+➜  HW2_Lesta git:(master) git revert HEAD
+[master 5acdb99] Revert "Ошибочный коммит revert"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 zadanie10.txt
+
+➜  HW2_Lesta git:(master) git log --oneline
+
+```
+5acdb99 (HEAD -> master) Revert "Ошибочный коммит revert"
+85c7694 Ошибочный коммит
+3bdc7e1 (tag: v1.0.0) README
+c81bffd README.md в .gitignore
+ae5644e Слияние ветки feature/api в master
+a57e332 Задание 6
+b3bd339 Удалил ненужные картинки
+48487a5 (feature/api) Задание 6. Изменения 2 в ветке feature/api
+c307581 Задание 6. Изменения в ветке feature/api
+9c39df1 Задания 1-4
+(END)
+```
+
+### Reset
+
+```bash
+git reset --hard HEAD~1
+git reset --hard HEAD~1
+# Или сразу git reset --hard HEAD~2
+```
+➜  HW2_Lesta git:(master) git reset --hard HEAD~1
+
+```
+HEAD is now at 85c7694 Ошибочный коммит
+```
+
+➜  HW2_Lesta git:(master) git reset --hard HEAD~1
+
+```
+HEAD is now at 3bdc7e1 README
+```
+
+➜  HW2_Lesta git:(master) git log --oneline
+
+```
+3bdc7e1 (HEAD -> master, tag: v1.0.0) README
+c81bffd README.md в .gitignore
+ae5644e Слияние ветки feature/api в master
+a57e332 Задание 6
+b3bd339 Удалил ненужные картинки
+48487a5 (feature/api) Задание 6. Изменения 2 в ветке feature/api
+c307581 Задание 6. Изменения в ветке feature/api
+9c39df1 Задания 1-4
+~
+~
+~
+~
+(END)
+```
+
+## 11. Используйте git stash для сохранения незакоммиченных изменений. Затем восстановите их и продолжите работу.
+
+```bash
+echo "Задание 11" > zadanie11.txt
+git status
+```
+
+➜  HW2_Lesta git:(master) ✗ git status
+
+```
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        zadanie11.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+```bash
+git add .
+git stash save "Сохраняем изменения"
+git status
+```
+
+➜  HW2_Lesta git:(master) git status
+
+```
+On branch master
+nothing to commit, working tree clean
+```
+
+```bash
+git stash list
+```
+
+➜  HW2_Lesta git:(master) git stash list
+
+```
+stash@{0}: On master: Сохраняем изменения
+(END)
+```
+
+```bash
+git stash apply stash@{0} # Оставляем копию в stash
+git stash pop # Восстанавливает и удаляет из stash
+```
+
+➜  HW2_Lesta git:(master) git stash apply stash@{0}
+
+```
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   zadanie11.txt
+```
+
+# 12. Настройте удалённый репозиторий. Опубликуйте ветки, включая теги.
+
+```bash
+git remote add origin git@github.com:Mazurovsasha/lesta_hw2.git
+git push -u origin master
+git push origin v1.0.0
 ```
