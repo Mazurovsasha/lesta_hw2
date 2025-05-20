@@ -298,4 +298,5 @@ Changes to be committed:
 git remote add origin git@github.com:Mazurovsasha/lesta_hw2.git
 git push -u origin master
 git push origin v1.0.0
+git push --all origin # Пушим все ветки
 ```
