@@ -119,3 +119,11 @@ echo "Задание 6. Изменения 2 в ветке feature/ui" >> /home/
 git add .
 git commit -m "Задание 6. Изменения 2 в ветке feature/ui"
 ```
+
+## 7. Выполните слияние ветки feature/api в main с использованием --no-ff.
+
+```bash
+git checkout master
+git merge --no-ff feature/api -m "Слияние ветки feature/api в master"
+git log --graph --oneline
+```
