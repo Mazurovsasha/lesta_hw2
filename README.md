@@ -1,11 +1,11 @@
 # Домашняя работа к лекции №2 
 
-## Создайте локальный Git-репозиторий.
+## 1. Создайте локальный Git-репозиторий.
 
 ```bash
 git init
 ```
-## Настройте имя пользователя и email для текущего репозитория.
+## 2. Настройте имя пользователя и email для текущего репозитория.
 
 ```bash
 git config user.name "Alex Mazurov"
@@ -23,7 +23,7 @@ user.email=mazurovsasha@gmail.com
 (END)
 ```
 
-## Создайте структуру проекта с несколькими директориями. Добавьте не менее трёх файлов в разные каталоги.
+## 3. Создайте структуру проекта с несколькими директориями. Добавьте не менее трёх файлов в разные каталоги.
 
 ```bash
 mkdir 1
@@ -34,7 +34,7 @@ mkdir 3
 echo "Dir 3" > /home/sasha/HW2_Lesta/3/3.txt
 ```
 
-## Настройте .gitignore, исключив один из подкаталогов от отслеживания.
+## 4. Настройте .gitignore, исключив один из подкаталогов от отслеживания.
 
 ```bash
 echo "/1/" > .gitignore
@@ -56,10 +56,42 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
+```
+➜  HW2_Lesta git:(master) ✗ git add .
+➜  HW2_Lesta git:(master) ✗ git status
+On branch master
 
-## Создайте две ветки от main: feature/api и feature/ui.
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   2.bmp
+        new file:   2/2.txt
+        new file:   3/3.txt
+        new file:   README.md
+
+➜  HW2_Lesta git:(master) ✗ git commit -m "Задания 1-4"
+[master (root-commit) 9c39df1] Задания 1-4
+ 5 files changed, 68 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 2.bmp
+ create mode 100644 2/2.txt
+ create mode 100644 3/3.txt
+ create mode 100644 README.md
+ ```
+## 5. Создайте две ветки от main: feature/api и feature/ui.
 
 ```bash
 git branch feature/api
 git branch feature/ui
 ```
+
+➜  HW2_Lesta git:(master) ✗ git branch
+```
+  feature/api
+  feature/ui
+* master
+(END)
+```
+
