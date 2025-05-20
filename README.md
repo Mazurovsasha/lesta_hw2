@@ -144,3 +144,15 @@ git log --graph --oneline
 * 9c39df1 Задания 1-4
 (END)
 ```
+
+## 8. Выполните ребейз ветки feature/ui относительно main. Разрешите возможные конфликты. Зафиксируйте изменения.
+
+```bash
+git checkout feature/ui
+git rebase master
+```
+➜  HW2_Lesta git:(feature/ui) git rebase master
+
+```
+Successfully rebased and updated refs/heads/feature/ui.
+```
